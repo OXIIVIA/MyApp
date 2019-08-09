@@ -1,6 +1,7 @@
 .main
   .articles
-    %p.articles__title LATEST ARTICLES
+    %h1.articles__title LATEST ARTICLES
+    %span.articles__double-line
     .articles__wrapper
       = link_to root_path, class: "article" do
         .article__image
@@ -54,7 +55,8 @@
       = link_to "READ MORE", "/", class: "articles__more__btn"
 
   .movies
-    %p.movies__title LATEST VIDEOS
+    %h1.movies__title LATEST VIDEOS
+    %span.movies__double-line
     .movies__wrapper
       = link_to root_path, class: "movie" do
         .movie__thumnail

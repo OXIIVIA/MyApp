@@ -1,0 +1,7 @@
+@mixin double-line($color) {
+  display: block;
+  height: 10px;
+  width: 100%;
+  border-top :2px solid $color;
+  border-bottom :2px solid $color;
+}

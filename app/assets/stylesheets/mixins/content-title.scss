@@ -1,8 +1,9 @@
-@mixin content-title {
-  padding-bottom: 10px;
-  margin-bottom: 30px;
+@mixin content-title($color) {
+  height: 40px;
+  line-height:40px;
   text-align: center;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
+  color: $color;
 }
