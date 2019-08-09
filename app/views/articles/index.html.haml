@@ -1,21 +1,3 @@
-%header.header
-  .header__wrapper
-    = link_to "", root_path, class: "header__wrapper__logo"
-    .menu
-      %ul.menu__list
-        %li.menu__list--articles
-          = link_to "ARTICLES", "/"
-        %li.menu__list--artists
-          = link_to "ARTISTS", "/"
-        %li.menu__list--favorites
-          = link_to "FAVORITES", "/"
-        %li.menu__list--videos
-          = link_to "VIDEOS", "/"
-        %li.menu__list--ranking
-          = link_to "RANKING", "/"
-        %li.menu__list--search
-          = fa_icon "search"
-
 .main
   .articles
     %p.articles__title LATEST ARTICLES
