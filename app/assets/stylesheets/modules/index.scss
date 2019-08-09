@@ -24,11 +24,20 @@
   &__list {
     height: 100%;
     display: flex;
-    &--search {
-      margin-left: 10px;
+    &__link {
+      display:block;
+    }
+    &__btn {
+      margin-left: 20px;
+      &:hover {
+        cursor: pointer;
+      }
       & i {
         line-height: 60px;
         color: $white;
+        &:hover {
+          color: $light-blue;
+        }
       }
     }
   }
@@ -46,9 +55,16 @@
       color: $light-blue;
     }
   }
-
-  
 }
+
+#default-menu {
+  display: block;
+}
+
+#user-menu {
+  display: none;
+}
+
 
 .main {
   width: 100vw;
