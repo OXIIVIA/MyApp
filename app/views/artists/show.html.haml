@@ -10,7 +10,7 @@
           %li.artist-data__menu__list__link
             = link_to "EDIT DATA", "/"
           %li.artist-data__menu__list__link
-            = link_to "DELETE DATA", "/"
+            = link_to "DELETE DATA", artist_path(@artist), method: :delete
     %span.artist-data__start-single-line
     %p.artist-data__text
       = safe_join(@artist.text.split("\n"), tag(:br))
