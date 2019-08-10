@@ -49,3 +49,68 @@
     }
   }
 }
+
+.artist-data {
+  width: 70%;
+  margin: 0 auto;
+  background-color: $white;
+  &__name {
+    @include content-title($black);
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+  }
+  &__double-line {
+    @include double-line($black);
+    margin-bottom: 30px;
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 50px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  &__menu {
+    width: 100%;
+    height: 30px;
+    &__list {
+      display: flex;
+      &__link {
+        & a {
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          margin-right: 20px;
+          text-decoration: none;
+          font-size: 10px;
+          font-weight: bold;
+          color: $black;
+          letter-spacing: 2px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  &__start-single-line {
+    @include single-line($black);
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__end-single-line {
+    @include single-line($black);
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
