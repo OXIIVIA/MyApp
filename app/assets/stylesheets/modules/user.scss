@@ -1,0 +1,102 @@
+.account-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+  &__inner {
+    width: 40%;
+  }
+  &__header {
+    height:50px;
+    & h2 {
+      line-height: 50px;
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+}
+
+.double-line--white {
+  @include double-line($white);
+}
+
+.user-form {
+  padding: 30px;
+}
+
+
+.field-input {
+  width:100%;
+  margin-bottom: 20px;
+  & input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    background-color: $black;
+    color: $white;
+    border-bottom: 1px solid $white;
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid #7806c4;
+    }
+    &::placeholder {
+      color:$white;
+      text-align: center;
+    }
+  }
+}
+
+
+.field-login {
+  width: 100%;
+  height: 46px;
+  &__btn {
+    display: block;
+    height: 100%;
+    width: 33%;
+    border: 2px solid #0a0794;
+    margin: 0 auto;
+    line-height: 42px;
+    font-size: 18px;
+    color:white;
+    background-color: $black;
+    // border-radius: 23px;
+    text-decoration:none;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      background-color:#0a0794;
+    }
+  }
+}
+
+.field-message {
+  margin: 40px 0  20px;
+  text-align: center;
+}
+
+.field-signup {
+  @extend .field-login;
+  &__btn{
+    @extend .field-login__btn;
+    border: 2px solid #026b3c;
+    &:hover {
+      background-color:#026b3c;
+    }
+  }
+}
+
+.field-update {
+  @extend .field-login;
+  &__btn{
+    @extend .field-login__btn;
+    border: 2px solid #ff692e;
+    &:hover {
+      background-color:#ff692e;
+    }
+  }
+}

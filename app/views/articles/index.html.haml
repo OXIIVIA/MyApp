@@ -1,24 +1,7 @@
-%header.header
-  .header__wrapper
-    = link_to "", root_path, class: "header__wrapper__logo"
-    .menu
-      %ul.menu__list
-        %li.menu__list--articles
-          = link_to "ARTICLES", "/"
-        %li.menu__list--artists
-          = link_to "ARTISTS", "/"
-        %li.menu__list--favorites
-          = link_to "FAVORITES", "/"
-        %li.menu__list--videos
-          = link_to "VIDEOS", "/"
-        %li.menu__list--ranking
-          = link_to "RANKING", "/"
-        %li.menu__list--search
-          = fa_icon "search"
-
 .main
   .articles
-    %p.articles__title LATEST ARTICLES
+    %h1.articles__title LATEST ARTICLES
+    %span.articles__double-line
     .articles__wrapper
       = link_to root_path, class: "article" do
         .article__image
@@ -72,7 +55,8 @@
       = link_to "READ MORE", "/", class: "articles__more__btn"
 
   .movies
-    %p.movies__title LATEST VIDEOS
+    %h1.movies__title LATEST VIDEOS
+    %span.movies__double-line
     .movies__wrapper
       = link_to root_path, class: "movie" do
         .movie__thumnail

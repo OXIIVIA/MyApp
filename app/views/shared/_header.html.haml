@@ -1,0 +1,35 @@
+%header.header
+  .header__wrapper
+    = link_to "", root_path, class: "header__wrapper__logo"
+    .menu
+      #default-menu
+        %ul.menu__list
+          %li.menu__list__link
+            .menu__list__link__box
+              = link_to "ARTICLES", "/"
+          %li.menu__list__link
+            = link_to "ARTISTS", "/"
+          %li.menu__list__link
+            = link_to "FAVORITES", "/"
+          %li.menu__list__link
+            = link_to "VIDEOS", "/"
+          %li.menu__list__link
+            = link_to "RANKING", "/"
+          %li.menu__list__btn
+            = fa_icon "search"
+          %li.menu__list__btn
+            = fa_icon "user"
+      #user-menu
+        %ul.menu__list
+          - if user_signed_in?
+            %li.menu__list__link
+              = link_to "EDIT ACCOUNT", edit_user_path(current_user)
+            %li.menu__list__link
+              = link_to "LOG OUT", destroy_user_session_path, method: :delete
+          - else 
+            %li.menu__list__link
+              = link_to "SIGN UP", new_user_registration_path
+            %li.menu__list__link
+              = link_to "LOG IN", new_user_session_path
+          %li.menu__list__btn
+            = fa_icon "times"

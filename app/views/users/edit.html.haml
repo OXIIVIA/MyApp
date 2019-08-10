@@ -1,0 +1,17 @@
+.account-page
+  .account-page__inner
+    .account-page__header 
+      %h2 EDIT ACCOUNT
+    %span.double-line--white
+    = form_for(current_user) do |f|
+      .user-form
+        .field-label
+          = f.label :name
+        .field-input
+          = f.text_field :name, autofocus: true
+        .field-label
+          = f.label :email
+        .field-input
+          = f.email_field :email
+      .field-update
+        = f.submit "Update", class: 'field-update__btn'

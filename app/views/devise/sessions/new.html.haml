@@ -1,0 +1,17 @@
+.account-page
+  .account-page__inner
+    .account-page__header
+      %h2 LOG IN
+    %span.double-line--white
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      .user-form
+        .field-input
+          = f.email_field :email, autofocus: true, placeholder: "Email"
+        .field-input
+          = f.password_field :password, autocomplete: "off", placeholder: "登録したパスワードを入力してください"
+      .field-login
+        = f.submit "LOG IN", class: "field-login__btn"
+      %h5.field-message 新規アカウントの作成はこちら
+      .field-signup
+        = render "devise/shared/links"
