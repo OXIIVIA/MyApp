@@ -43,6 +43,8 @@ group :development, :test do
   gem 'erb2haml'
   gem 'pry-rails'
   gem 'devise'
+  gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do

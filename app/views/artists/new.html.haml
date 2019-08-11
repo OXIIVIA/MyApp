@@ -1,0 +1,18 @@
+= form_for(@artist, method: :POST) do |f|
+  .form-box-update
+    .artist-form
+      .artist-form__header
+        %h2 REGISTER NEW ARTIST
+        %span.double-line--black
+      .artist-form__box
+        .artist-form__box__name
+          = f.label :name
+          = f.text_field :name, autofocus: true
+        .artist-form__box__image
+          = f.label :image
+          = f.text_field :image
+        .artist-form__box__text
+          = f.label :text
+          = f.text_area :text
+      .artist-form__submit
+        = f.submit "REGISTER"

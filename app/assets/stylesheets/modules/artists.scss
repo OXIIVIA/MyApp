@@ -1,0 +1,212 @@
+.artists {
+  padding: 40px 100px;
+  background-color: $gray;
+  &__title {
+    @include content-title($black);
+  }
+  &__double-line {
+    @include double-line($black);
+    margin-bottom: 30px;
+  }
+  &__wrapper {
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+  }
+}
+
+.artist {
+  float: left;
+  width: 308px;
+  border: 1px solid $gray;
+  &:hover {
+    opacity: 0.7;
+  }
+  &__box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    &__image {
+      width: 100%;
+      height: calc(308px / 16 * 9);
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+    }
+    &__name {
+      color: $black;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.artist-data {
+  width: 70%;
+  margin: 0 auto;
+  background-color: $white;
+  &__name {
+    @include content-title($black);
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+  }
+  &__double-line {
+    @include double-line($black);
+    margin-bottom: 30px;
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 50px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  &__menu {
+    width: 100%;
+    height: 30px;
+    &__list {
+      display: flex;
+      &__link {
+        & a {
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          margin-right: 20px;
+          text-decoration: none;
+          font-size: 10px;
+          font-weight: bold;
+          color: $black;
+          letter-spacing: 2px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  &__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  &__start-single-line {
+    @include single-line($black);
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__end-single-line {
+    @include single-line($black);
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__back-btn {
+    display: block;
+    height: 100%;
+    width: 33%;
+    border: 1px solid $black;
+    margin: 0 auto 30px;
+    line-height: 42px;
+    font-size: 18px;
+    color: $black;
+    background-color: $white;
+    text-decoration:none;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      color: $white;
+      background-color: black;
+    }
+  }
+}
+.form-box-update {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-form {
+  width: 70%;
+  &__header {
+    & h2 {
+      line-height: 50px;
+      text-align: center;
+      font-size: 24px;
+    }
+  .double-line--black {
+    @include double-line($black);
+  }
+  }
+  &__box {
+    width: 100%;
+    padding: 30px 0;
+    & label {
+      display: block;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    & input {
+      height: 40px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $black;
+      margin-bottom: 30px;
+      text-align: center;
+      &:focus {
+        outline: 0;
+        border-bottom: 1px solid #7806c4;
+      }
+    }
+    & textarea {
+      height: 200px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $black;
+      &:focus {
+        outline: 0;
+        border-bottom: 1px solid #7806c4;
+      }
+    }
+    &__name {
+      width: 50%;
+      margin: 0 auto;
+    }
+    &__image {
+      width: 100%
+    }
+    &__text {
+      width: 100%
+    }
+  }
+  &__submit {
+    width: 100%;
+    height: 46px;
+    & input {
+    display: block;
+    height: 100%;
+    width: 33%;
+    border: 1px solid $black;
+    margin: 0 auto;
+    line-height: 42px;
+    font-size: 18px;
+    color: $black;
+    background-color: $white;
+    text-decoration:none;
+    text-align: center;
+      &:hover {
+        cursor: pointer;
+        color: $white;
+        background-color: black;
+      }
+    }
+  }
+
+}
+

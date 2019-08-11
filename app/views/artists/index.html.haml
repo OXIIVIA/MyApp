@@ -1,0 +1,110 @@
+.main
+  .artists
+    %h1.artists__title ARTISTS
+    %span.artists__double-line
+    .artists__wrapper
+      - @artists.each do |artist|
+        .artist
+          = link_to artist_path(artist.id), class: "artist__box" do
+            = image_tag artist.image, class: "artist__box__image"
+            %h2.artist__box__name
+              = artist.name
+
+
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://cdn.abcotvs.com/dip/images/1551078_101116-wpvi-drake-IMG.jpg?w=1280&r=16%3A9", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://yo-gakutaiyaku.com/wp-content/uploads/2017/07/the-weeknd-0217-GQ-FEWE03-01.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://i.kinja-img.com/gawker-media/image/upload/s--QvGjOH6k--/c_scale,f_auto,fl_progressive,q_80,w_800/rnnrq6r7cfcg71meyplj.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://hdqwalls.com/download/ed-sheeran-4k-7b-1600x900.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://3.bp.blogspot.com/-Ahi-EHwIY5c/WmuYKeRNJGI/AAAAAAAAaFs/My6pdap5qaYDnHI23_OzfZ9TuPOy_nybgCLcBGAs/s1600/migos-edit-c_06_migos_527_c.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://damonge.com/images/Taylor-Swift-on-mobile-game.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://hdqwalls.com/download/8k-post-malone-15-1600x900.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      -# .artist
+      -#   = link_to artists_path, class: "artist__box" do
+      -#     = image_tag "https://cdn.vox-cdn.com/thumbor/ze_7_R7_dgEcnojJytPnIYq0yJ8=/0x34:1366x1059/1820x1213/filters:focal(0x34:1366x1059):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/49573233/Justin_Bieber_Calvin_Klein.0.0.jpg", class: "artist__box__image"
+      -#     %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://e3.365dm.com/18/05/2048x1152/skynews-jay-z-rocawear_4300219.jpg?bypass-service-worker&20180503233230", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://hdqwalls.com/download/kendrick-lamar-american-rapper-ci-1600x900.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://www.theladders.com/wp-content/uploads/Beyonce_v2-800x450.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://www.albawaba.com/sites/default/files/styles/de2e_standard/public/im/rihanna-dubai-trip.jpg?itok=cXOfYRe8", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://cdn.abcotvs.com/dip/images/1551078_101116-wpvi-drake-IMG.jpg?w=1280&r=16%3A9", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://yo-gakutaiyaku.com/wp-content/uploads/2017/07/the-weeknd-0217-GQ-FEWE03-01.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://i.kinja-img.com/gawker-media/image/upload/s--QvGjOH6k--/c_scale,f_auto,fl_progressive,q_80,w_800/rnnrq6r7cfcg71meyplj.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://hdqwalls.com/download/ed-sheeran-4k-7b-1600x900.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://3.bp.blogspot.com/-Ahi-EHwIY5c/WmuYKeRNJGI/AAAAAAAAaFs/My6pdap5qaYDnHI23_OzfZ9TuPOy_nybgCLcBGAs/s1600/migos-edit-c_06_migos_527_c.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://damonge.com/images/Taylor-Swift-on-mobile-game.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://hdqwalls.com/download/8k-post-malone-15-1600x900.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://cdn.vox-cdn.com/thumbor/ze_7_R7_dgEcnojJytPnIYq0yJ8=/0x34:1366x1059/1820x1213/filters:focal(0x34:1366x1059):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/49573233/Justin_Bieber_Calvin_Klein.0.0.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://e3.365dm.com/18/05/2048x1152/skynews-jay-z-rocawear_4300219.jpg?bypass-service-worker&20180503233230", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://hdqwalls.com/download/kendrick-lamar-american-rapper-ci-1600x900.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://www.theladders.com/wp-content/uploads/Beyonce_v2-800x450.jpg", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      .artist
+        = link_to artists_path, class: "artist__box" do
+          = image_tag "https://www.albawaba.com/sites/default/files/styles/de2e_standard/public/im/rihanna-dubai-trip.jpg?itok=cXOfYRe8", class: "artist__box__image"
+          %h2.artist__box__name artist name
+      

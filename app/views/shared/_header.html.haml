@@ -5,10 +5,9 @@
       #default-menu
         %ul.menu__list
           %li.menu__list__link
-            .menu__list__link__box
-              = link_to "ARTICLES", "/"
+            = link_to "ARTICLES", "/"
           %li.menu__list__link
-            = link_to "ARTISTS", "/"
+            = link_to "ARTISTS", artists_path
           %li.menu__list__link
             = link_to "FAVORITES", "/"
           %li.menu__list__link
@@ -22,6 +21,9 @@
       #user-menu
         %ul.menu__list
           - if user_signed_in?
+            %li.menu__list__link
+              = link_to "NEW ARTIST", new_artist_path
+            %li.menu__list__link
             %li.menu__list__link
               = link_to "EDIT ACCOUNT", edit_user_path(current_user)
             %li.menu__list__link

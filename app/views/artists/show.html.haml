@@ -1,0 +1,18 @@
+.main
+  .artist-data
+    %h1.artist-data__name
+      = @artist.name
+    %span.artist-data__double-line
+    = image_tag @artist.image, class: "artist-data__image"
+    - if user_signed_in?
+      .artist-data__menu
+        %ul.artist-data__menu__list
+          %li.artist-data__menu__list__link
+            = link_to "EDIT DATA", edit_artist_path(@artist)
+          %li.artist-data__menu__list__link
+            = link_to "DELETE DATA", artist_path(@artist), method: :delete
+    %span.artist-data__start-single-line
+    %p.artist-data__text
+      = safe_join(@artist.text.split("\n"), tag(:br))
+    %span.artist-data__end-single-line
+    = link_to "BACK", artists_path, class: "artist-data__back-btn"

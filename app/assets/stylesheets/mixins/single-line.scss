@@ -1,0 +1,6 @@
+@mixin single-line($color) {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: $color;
+}
