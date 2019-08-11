@@ -5,7 +5,18 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def new
+    @artist = Artist.new
+  end
+
+  def create
+    artist = Artist.new(artist_params)
+    artist.save if user_signed_in?
+    redirect_to artists_path
+  end
+
   def show
+
   end
 
   def edit

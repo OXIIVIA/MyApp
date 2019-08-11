@@ -1,8 +1,8 @@
-= form_for(@artist, method: :PATCH) do |f|
+= form_for(@artist, method: :POST) do |f|
   .form-box-update
     .artist-form
       .artist-form__header
-        %h2 EDIT ARTIST DATA
+        %h2 REGISTER NEW ARTIST
         %span.double-line--black
       .artist-form__box
         .artist-form__box__name
@@ -15,4 +15,4 @@
           = f.label :text
           = f.text_area :text
       .artist-form__submit
-        = f.submit "UPDATE"
+        = f.submit "REGISTER"

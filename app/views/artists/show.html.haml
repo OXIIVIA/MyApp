@@ -15,3 +15,4 @@
     %p.artist-data__text
       = safe_join(@artist.text.split("\n"), tag(:br))
     %span.artist-data__end-single-line
+    = link_to "BACK", artists_path, class: "artist-data__back-btn"
