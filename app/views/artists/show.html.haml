@@ -5,6 +5,8 @@
     %span.artist-data__double-line
     = image_tag @artist.image, class: "artist-data__image"
     - if user_signed_in?
+      .follow-btn-box{id: "follow-btn-box-#{@artist.id}"}
+        = render "shared/follow-button", artist: @artist
       .artist-data__menu
         %ul.artist-data__menu__list
           %li.artist-data__menu__list__link

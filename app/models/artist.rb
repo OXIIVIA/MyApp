@@ -1,4 +1,4 @@
 class Artist < ApplicationRecord
-  # mount_uploader :image, ImageUploader
-
+  has_many :follow_users, dependent: :destroy
+  has_many :users, through: :follow_users
 end
