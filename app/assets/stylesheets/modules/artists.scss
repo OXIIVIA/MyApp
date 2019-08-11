@@ -66,6 +66,7 @@
     background-position:center;
   }
   &__follow-btn {
+    display: block;
     height: 44px;
     width: 33%;
     border: 1px solid $black;
@@ -76,11 +77,16 @@
     background-color: $white;
     text-decoration:none;
     text-align: center;
-    &:hover {
-      cursor: pointer;
-      color: $white;
-      background-color: black;
-    }
+    // &:hover {
+    //   cursor: pointer;
+    //   color: $white;
+    //   background-color: black;
+    // }
+  }
+  &__following-btn {
+    @extend .artist-data__follow-btn;
+    background-color: $black;
+    color: $white;
   }
   &__menu {
     width: 100%;
