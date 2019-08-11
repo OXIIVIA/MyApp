@@ -8,7 +8,7 @@
       .artist-data__menu
         %ul.artist-data__menu__list
           %li.artist-data__menu__list__link
-            = link_to "EDIT DATA", "/"
+            = link_to "EDIT DATA", edit_artist_path(@artist)
           %li.artist-data__menu__list__link
             = link_to "DELETE DATA", artist_path(@artist), method: :delete
     %span.artist-data__start-single-line
