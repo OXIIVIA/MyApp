@@ -22,8 +22,11 @@
         %ul.menu__list
           - if user_signed_in?
             %li.menu__list__link
-              = link_to "NEW ARTIST", new_artist_path
-            %li.menu__list__link
+              %p.menu__list__link--user-name
+                = "Welcome, #{current_user.name}!"
+            - if current_user != nil && current_user.admin_flg?
+              %li.menu__list__link
+                = link_to "NEW ARTIST", new_artist_path
             %li.menu__list__link
               = link_to "EDIT ACCOUNT", edit_user_path(current_user)
             %li.menu__list__link

@@ -11,7 +11,7 @@ class ArtistsController < ApplicationController
 
   def create
     artist = Artist.new(artist_params)
-    artist.save if user_signed_in?
+    artist.save if current_user.admin_flg?
     redirect_to artists_path
   end
 
@@ -24,12 +24,12 @@ class ArtistsController < ApplicationController
 
   def update
     artist = Artist.find(params[:id])
-    artist.update(artist_params) if user_signed_in?
+    artist.update(artist_params) if current_user.admin_flg?
     redirect_to artist_path(artist.id)
   end
 
   def destroy
-    @artist.destroy if user_signed_in?
+    @artist.destroy if current_user.admin_flg?
     redirect_to artists_path
   end
 
