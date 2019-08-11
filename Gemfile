@@ -45,6 +45,8 @@ group :development, :test do
   gem 'devise'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'cancancan'
+  gem 'rails_admin'
 end
 
 group :development do
