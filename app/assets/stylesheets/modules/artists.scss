@@ -65,6 +65,23 @@
     background-repeat:no-repeat;
     background-position:center;
   }
+  &__follow-btn {
+    height: 44px;
+    width: 33%;
+    border: 1px solid $black;
+    margin: 0 auto 30px;
+    line-height: 42px;
+    font-size: 18px;
+    color: $black;
+    background-color: $white;
+    text-decoration:none;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      color: $white;
+      background-color: black;
+    }
+  }
   &__menu {
     width: 100%;
     height: 30px;
