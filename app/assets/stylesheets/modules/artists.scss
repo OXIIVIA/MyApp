@@ -77,11 +77,6 @@
     background-color: $white;
     text-decoration:none;
     text-align: center;
-    // &:hover {
-    //   cursor: pointer;
-    //   color: $white;
-    //   background-color: black;
-    // }
   }
   &__following-btn {
     @extend .artist-data__follow-btn;
