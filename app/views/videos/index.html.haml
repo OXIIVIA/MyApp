@@ -1,0 +1,18 @@
+.main
+  .movies
+    %h1.movies__title LATEST VIDEOS
+    %span.movies__double-line
+    .movies__wrapper
+      - @videos.each do |video|
+        = link_to root_path, class: "movie" do
+          .movie__thumnail
+            = image_tag "http://img.youtube.com/vi/#{video.videoID}/mqdefault.jpg"
+          .movie__details
+            %p.movie__details__song-title
+              = video.title
+            %p.movie__details__artist-name
+              = video.artist.name
+            %p.movie__details__date
+              = video.created_at.strftime("%Y/%m/%d")
+    .movies__more
+      = link_to "WATCH MORE", "/", class: "movies__more__btn"
