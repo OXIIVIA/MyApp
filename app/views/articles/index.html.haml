@@ -3,60 +3,17 @@
     %h1.articles__title LATEST ARTICLES
     %span.articles__double-line
     .articles__wrapper
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
-      = link_to root_path, class: "article" do
-        .article__inner
-          .article__inner__image
-            = image_tag "http://img.youtube.com/vi/yzTuBuRdAyA/mqdefault.jpg"
-          .article__inner__text-box
-            %h2.article__inner__text-box__title
-              = "ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！ここにタイトルが入るよ！"
-            %p.article__inner__text-box__date
-              = "2019/8/13"
+      - @articles.each do |article|
+        = link_to article_path(article), class: "article" do
+          .article__inner
+            .article__inner__image
+              = image_tag article.image
+            .article__inner__text-box
+              %h2.article__inner__text-box__title
+                = article.title
+              %p.article__inner__text-box__date
+                = article.created_at.strftime("%Y/%m/%d")
+      
     .articles__more
       = link_to "READ MORE", "/", class: "articles__more__btn"
 
@@ -68,56 +25,3 @@
 
 
 
-
-    -# .square-a
-    -#   .square-b
-    -#     .square-c
-    -#       .square-image
-    -#         = image_tag "https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/01/The-Weeknd-920x584.jpg"
-    -#       .square-text
-    -#         %h2
-    -#           記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよabcd
-    -#         %p
-    -#           2019/8/8
-    -#   .square-b
-    -#     .square-c
-    -#       .square-image
-    -#         = image_tag "http://img.youtube.com/vi/JZjAg6fK-BQ/mqdefault.jpg"
-    -#       .square-text
-    -#         %h2
-    -#           記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよabcd
-    -#         %p
-    -#           2019/8/8
-    -#   .square-b
-    -#     .square-c
-    -#       .square-image
-    -#         = image_tag "http://img.youtube.com/vi/JZjAg6fK-BQ/mqdefault.jpg"
-    -#       .square-text
-    -#         %h2
-    -#           記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよabcd
-    -#         %p
-    -#           2019/8/8
-    -#   .square-b
-    -#     .square-c
-    -#       .square-image
-    -#         = image_tag "http://img.youtube.com/vi/JZjAg6fK-BQ/mqdefault.jpg"
-    -#       .square-text
-    -#         %h2
-    -#           記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよabcd
-    -#         %p
-    -#           2019/8/8
-    -#   .square-b
-    -#     .square-c
-    -#       .square-image
-    -#         = image_tag "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg"
-    -#       .square-text
-    -#         %h2
-    -#           記事のタイトルがここに入るよ記事のタイトルがここに入るよ記事のタイトルがここに入るよabcd
-    -#         %p
-    -#           2019/8/8
-
-
-
-
-
-     

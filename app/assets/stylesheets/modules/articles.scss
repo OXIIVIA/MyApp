@@ -122,7 +122,6 @@
         &__image {
           width: 100%;
           height: 56.25%;
-          background-color: yellow;
           & img {
             height: 100%;
             width: 100%;
@@ -136,8 +135,11 @@
           height: 43.75%;
           &__title {
             height: 80%;
-            padding: 10%;
-            line-height: 1.5;
+            padding: 5%;
+            line-height: 1.4;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
           }
           &__date {
             height: 20%;
