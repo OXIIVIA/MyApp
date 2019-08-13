@@ -136,11 +136,13 @@
           height: 43.75%;
           &__title {
             height: 80%;
-            padding: 5%;
+            padding: 10%;
+            line-height: 1.5;
           }
           &__date {
             height: 20%;
             text-align: center;
+            font-size: 14px;
           }
         }
       }
