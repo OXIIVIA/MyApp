@@ -2,7 +2,6 @@ class VideosController < ApplicationController
   before_action :set_artist, only: [:show]
 
   def index
-    
     @videos = Video.all
   end
 

@@ -1,0 +1,25 @@
+.main
+  .article-show
+    .article-show__head-box
+      %h1.article-show__head-box__title
+        = @article.title
+      %span.article-show__head-box__double-line
+    .article-show__image-box
+      = image_tag @article.image, class: "article-show__image-box__image"
+    .article-show__text-box
+      %span.article-show__text-box__single-line
+      %p.article-show__text-box__text
+        = safe_join(@article.text.split("\n"), tag(:br))
+      %span.article-show__text-box__single-line
+    - if !@articles.empty?
+      .article-show__related-articles-box
+        %h2.article-show__related-articles-box__title
+          = "Related articles"
+        %span.article-show__related-articles-box__single-line
+        .article-show__related-articles-box__wrapper
+          - @articles.each do |article|
+            = link_to article_path(article), class: "article-show__related-articles-box__wrapper__article" do
+              = render "shared/articles-list", article: article
+        %span.article-show__related-articles-box__single-line
+    .article-show__button-box
+      = link_to "BACK", articles_path, class: "article-show__button-box__back-btn"

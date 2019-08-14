@@ -5,15 +5,4 @@
     .videos__wrapper
       - @videos.each do |video|
         .video
-          .video__inner
-            .video__inner__thumnail
-              = link_to video_path(video), class: "video__inner__thumnail__link" do
-                = image_tag "http://img.youtube.com/vi/#{video.videoID}/mqdefault.jpg"
-            .video__inner__details
-              %p.video__inner__details__song-title
-                = video.title
-              = link_to "#{video.artist.name}", artist_path(video.artist), class: "video__inner__details__artist-name"
-              %p.video__inner__details__date
-                = video.created_at.strftime("%Y/%m/%d")
-      .videos__more
-        = link_to "WATCH MORE", "/", class: "videos__more__btn"
+          = render "shared/videos-list", video: video

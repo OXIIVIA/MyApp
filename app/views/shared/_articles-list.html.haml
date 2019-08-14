@@ -1,0 +1,8 @@
+.article__inner
+  .article__inner__image
+    = image_tag article.image
+  .article__inner__text-box
+    %h2.article__inner__text-box__title
+      = article.title
+    %p.article__inner__text-box__date
+      = article.created_at.strftime("%Y/%m/%d")
