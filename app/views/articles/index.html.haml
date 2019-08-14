@@ -5,18 +5,7 @@
     .articles__wrapper
       - @articles.each do |article|
         = link_to article_path(article), class: "article" do
-          .article__inner
-            .article__inner__image
-              = image_tag article.image
-            .article__inner__text-box
-              %h2.article__inner__text-box__title
-                = article.title
-              %p.article__inner__text-box__date
-                = article.created_at.strftime("%Y/%m/%d")
-      
-    .articles__more
-      = link_to "READ MORE", "/", class: "articles__more__btn"
-
+          = render "shared/articles-list", article: article
 
 
 

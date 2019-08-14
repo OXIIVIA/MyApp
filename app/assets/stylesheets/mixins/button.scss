@@ -1,0 +1,18 @@
+@mixin button {
+  display: block;
+  height: 100%;
+  width: 33%;
+  border: 1px solid $black;
+  margin: 0 auto 30px;
+  line-height: 42px;
+  font-size: 18px;
+  color: $black;
+  background-color: $white;
+  text-decoration:none;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    color: $white;
+    background-color: black;
+  }
+}

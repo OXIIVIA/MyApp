@@ -1,0 +1,56 @@
+@mixin articles-list($width-per) {
+  display: block;
+  position: relative;
+  width: $width-per;
+  height: auto;
+  border-bottom: 1px solid $black;
+  margin: calc(1% - 1px);
+  overflow: hidden;
+  text-decoration: none;
+  color: $black;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  &:hover {
+    color: $light-blue;
+    border-bottom: 1px solid $light-blue;
+  }
+  .article__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    &__image {
+      width: 100%;
+      height: 56.25%;
+      & img {
+        height: 100%;
+        width: 100%;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+      }
+    }
+    &__text-box {
+      width: 100%;
+      height: 43.75%;
+      &__title {
+        height: 80%;
+        padding: 5%;
+        line-height: 1.4;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__date {
+        height: 20%;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+}   

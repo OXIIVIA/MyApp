@@ -16,25 +16,17 @@
           %span.video-show__info__artist-info__name-box__single-line
           = link_to "#{@video.artist.name}", artist_path(@video.artist), class: "video-show__info__artist-info__name-box__name"
           %span.video-show__info__artist-info__name-box__single-line
-
-
-      %h2.video-show__info__other-videos-message
-        = "Other videos of #{@video.artist.name}"
-      %span.video-show__info__other-videos-single-line
-      .video-show__info__other-videos-wrapper
-        - @videos.each do |video|
-          .other-video
-            .other-video__inner
-              .other-video__inner__thumnail
-                = link_to video_path(video), class: "other-video__inner__thumnail__link" do
-                  = image_tag "http://img.youtube.com/vi/#{video.videoID}/mqdefault.jpg"
-              .other-video__inner__details
-                %p.other-video__inner__details__song-title
-                  = video.title
-                = link_to "#{video.artist.name}", artist_path(video.artist), class: "other-video__inner__details__artist-name"
-                %p.other-video__inner__details__date
-                  = video.created_at.strftime("%Y/%m/%d")
-      
+      - if !@videos.empty?
+        %h2.video-show__info__other-videos-message
+          = "Other videos of #{@video.artist.name}"
+        %span.video-show__info__other-videos-single-line
+        .video-show__info__other-videos-wrapper
+          - @videos.each do |video|
+            .other-video
+              = render "shared/videos-list", video: video
+        %span.video-show__info__other-videos-single-line
+      .video-show__info__button-box
+        = link_to "BACK", videos_path, class: "video-show__info__button-box__back-btn"
 
 
 
