@@ -7,7 +7,9 @@
       %span.video-show__info__double-line
       .video-show__info__player
         %iframe(src="https://www.youtube.com/embed/#{@video.videoID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-
+      - if user_signed_in?
+        .video-show__info__favorite-video-btn{id: "favorite-video-btn-#{@video.id}"}
+          -# = render "shared/favorite-video-button", video: @video
       .video-show__info__artist-info
         %h2.video-show__info__artist-info__title Starring Artist
         %span.video-show__info__artist-info__single-line
