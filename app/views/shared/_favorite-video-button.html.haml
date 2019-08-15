@@ -1,4 +1,4 @@
 - if current_user.favorite_videos.find_by(video_id: video.id)
-  -# = link_to "YOUR FAVORITE", follow_path(artist.id), method: :delete, class: "artist-data__following-btn"
+  = link_to "YOUR FAVORITE", remove_favorite_path(video.id), method: :delete, class: "video-show__info__button-box__remove-favorite-btn", remote: true
 - else
-  -# = link_to "FOLLOW", follow_path(artist.id), method: :post, class: "artist-data__follow-btn"
+  = link_to "ADD FAVORITE", add_favorite_path(video.id), method: :post, class: "video-show__info__button-box__add-favorite-btn", remote: true
