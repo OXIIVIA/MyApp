@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   def index
-    @favorite_artists = cuurent_user.artists
-    @favirote_videos = current_user.videos
-    @favorite_articles = current_user.articles
+    @artists = cuurent_user.artists
+    @videos = current_user.videos
+    @articles = current_user.articles
   end
 
   def edit
