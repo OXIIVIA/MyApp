@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :artists, through: :follow_users
   has_many :favorite_videos, dependent: :destroy
   has_many :videos, through: :favorite_videos
+  has_many :favorite_articles, dependent: :destroy
+  has_many :articles, through: :favorite_articles
 end
