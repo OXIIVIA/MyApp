@@ -141,7 +141,7 @@
   }
   &__related-articles-box {
     width: 100%;
-    margin-top: 60px;
+    // margin-top: 60px;
     margin-bottom: 30px;
     &__title {
       @include content-title($black);
@@ -159,7 +159,7 @@
     }
   }
   &__button-box {
-    height: 44px;
+    // height: 44px;
     &__back-btn {
       @include button;
       margin-bottom: 30px;
@@ -169,6 +169,7 @@
         border: 1px solid $purple;
         background-color: $purple;
         color: $white;
+        // margin-bottom: 60px;
         &:hover {
           background-color: $purple;
         }
