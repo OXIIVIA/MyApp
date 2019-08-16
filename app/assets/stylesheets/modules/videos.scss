@@ -127,7 +127,7 @@
       &__remove-favorite-btn {
         @include button;
         border: 1px solid $yellow;
-        background-color: $yellow;;
+        background-color: $yellow;
         color: $white;
         &:hover {
           cursor: pointer;

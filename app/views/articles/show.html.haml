@@ -11,6 +11,9 @@
       %p.article-show__text-box__text
         = safe_join(@article.text.split("\n"), tag(:br))
       %span.article-show__text-box__single-line
+    - if user_signed_in?
+      .article-show__button-box{id: "favorite-article-btn-#{@article.id}"}
+        = render "shared/favorite-article-button", article: @article
     - if !@articles.empty?
       .article-show__related-articles-box
         %h2.article-show__related-articles-box__title
