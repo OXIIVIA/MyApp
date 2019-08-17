@@ -1,8 +1,10 @@
 .main
   .artists
-    %h1.artists__title ARTISTS
-    %span.artists__double-line
-    .artists__wrapper
-      - @artists.each do |artist|
-        = link_to artist_path(artist), class: "artist" do
-          = render "shared/artists-list", artist: artist
+    .artists__title-box
+      %h1.artists__title-box__title ARTISTS
+      %span.artists__title-box__double-line
+    .artists__artists-box
+      .artists__artists-box__wrapper
+        - @artists.each do |artist|
+          = link_to artist_path(artist), class: "artist" do
+            = render "shared/artists-list", artist: artist
