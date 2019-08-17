@@ -1,19 +1,27 @@
 .artists {
-  padding: 40px 100px;
+  width: 90%;
+  padding: 40px 0;
+  margin: 0 auto;
   background-color: $white;
-  &__title {
-    @include content-title($black);
+  &__title-box {
+    width: 100%;
+    &__title {
+      @include content-title($black);
+    }
+    &__double-line {
+      @include double-line($black);
+      margin-bottom: 30px;
+    }
   }
-  &__double-line {
-    @include double-line($black);
-    margin-bottom: 30px;
-  }
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    .artist {
-      @include artists-list(31%);
-    } 
+  &__artists-box {
+    width: 100%;
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      .artist {
+        @include artists-list(31%);
+      } 
+    }
   }
 }
 
