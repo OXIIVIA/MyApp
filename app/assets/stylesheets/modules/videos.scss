@@ -1,19 +1,23 @@
-.videos {
-  padding: 40px 100px;
-  background-color: #000;
-  &__title {
-    @include content-title($white);
-  }
-  &__double-line {
-    @include double-line($white);
-    margin-bottom: 30px;
-  }
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    .video {
-      @include videos-list(23%);
+.video-index {
+  width: 100%;
+  background-color: $black;
+  .videos {
+    padding: 40px 100px;
+    background-color: #000;
+    &__title {
+      @include content-title($white);
+    }
+    &__double-line {
+      @include double-line($white);
+      margin-bottom: 30px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      .video {
+        @include videos-list(23%);
+      }
     }
   }
 }

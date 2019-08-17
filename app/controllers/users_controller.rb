@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @artists = cuurent_user.artists
+    @artists = current_user.artists
     @videos = current_user.videos
     @articles = current_user.articles
   end

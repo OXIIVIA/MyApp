@@ -4,8 +4,5 @@
     %span.artists__double-line
     .artists__wrapper
       - @artists.each do |artist|
-        .artist
-          = link_to artist_path(artist.id), class: "artist__box" do
-            = image_tag artist.image, class: "artist__box__image"
-            %h2.artist__box__name
-              = artist.name
+        = link_to artist_path(artist), class: "artist" do
+          = render "shared/artists-list", artist: artist

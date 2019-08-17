@@ -24,7 +24,7 @@
         %span.video-show__info__other-videos-single-line
         .video-show__info__other-videos-wrapper
           - @videos.each do |video|
-            .other-video
+            = link_to video_path(video), class: "other-video" do
               = render "shared/videos-list", video: video
         %span.video-show__info__other-videos-single-line
       .video-show__info__button-box
