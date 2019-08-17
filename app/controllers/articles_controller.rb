@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_artist, only: [:show]
 
   def index
-    @articles = Article.all
+    @articles = Article.order("id DESC")
   end
 
   def show
