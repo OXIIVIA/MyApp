@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+    @artists = current_user.artists
+    @videos = current_user.videos
+    @articles = current_user.articles
+  end
+
   def edit
   end
 

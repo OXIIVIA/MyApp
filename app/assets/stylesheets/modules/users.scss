@@ -99,3 +99,82 @@
     }
   }
 }
+
+.mypage {
+  width: 70%;
+  margin: 0 auto;
+  &__title-box {
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+      height: 70px;
+      line-height: 70px;
+      font-size: 40px;
+    }
+    &__double-line {
+      @include double-line($black);
+    }
+  }
+  &__favorite-artists-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+    }
+    &__artists {
+      margin: 30px 0;
+      &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .favorite-artist {
+          @include artists-list(48%);
+        } 
+      }
+    }
+    &__single-line {
+      @include single-line($black)
+    }
+  }
+  &__favorite-articles-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+    }
+    &__articles {
+      margin: 30px 0;
+      &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .article {
+          @include articles-list(31%);
+        } 
+      }
+    }
+    &__single-line {
+      @include single-line($black)
+    }
+  }
+  &__favorite-videos-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+    }
+    &__videos {
+      margin: 30px 0;
+      &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .video {
+          @include videos-list(31%);
+          color: $black;
+          border-bottom: 1px solid $black;
+        }
+      }
+    }
+    &__single-line {
+      @include single-line($black)
+    }
+  }
+}

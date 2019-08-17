@@ -1,8 +1,9 @@
 .main
-  .videos
-    %h1.videos__title LATEST VIDEOS
-    %span.videos__double-line
-    .videos__wrapper
-      - @videos.each do |video|
-        .video
-          = render "shared/videos-list", video: video
+  .video-index
+    .videos
+      %h1.videos__title LATEST VIDEOS
+      %span.videos__double-line
+      .videos__wrapper
+        - @videos.each do |video|
+          = link_to video_path(video), class: "video" do
+            = render "shared/videos-list", video: video

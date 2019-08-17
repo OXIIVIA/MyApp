@@ -28,6 +28,8 @@
               %li.menu__list__link
                 = link_to "ADMIN", "/admin", target: :_blank
             %li.menu__list__link
+              = link_to "MY PAGE", users_path(current_user)
+            %li.menu__list__link
               = link_to "EDIT ACCOUNT", edit_user_path(current_user)
             %li.menu__list__link
               = link_to "LOG OUT", destroy_user_session_path, method: :delete

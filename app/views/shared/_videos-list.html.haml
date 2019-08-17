@@ -1,7 +1,6 @@
 .video__inner
   .video__inner__thumnail
-    = link_to video_path(video), class: "video__inner__thumnail__link" do
-      = image_tag "http://img.youtube.com/vi/#{video.videoID}/mqdefault.jpg"
+    = image_tag "http://img.youtube.com/vi/#{video.videoID}/mqdefault.jpg"
   .video__inner__details
     %p.video__inner__details__song-title
       = video.title

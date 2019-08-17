@@ -1,0 +1,45 @@
+.main
+  .mypage
+    .mypage__title-box
+      %h1.mypage__title-box__title
+        = current_user.name
+      %span.mypage__title-box__double-line
+    .mypage__favorite-artists-box
+      %h2.mypage__favorite-artists-box__title FAVORITE ARTISTS
+      %span.mypage__favorite-artists-box__single-line
+      .mypage__favorite-artists-box__artists
+        - if @artists.empty?
+          %p.mypage__favorite-artists-box__artists__message
+            = "ないで"
+        - else
+          .mypage__favorite-artists-box__artists__wrapper
+            - @artists.each do |artist|
+              = link_to artist_path(artist), class: "favorite-artist" do
+                = render "shared/artists-list", artist: artist
+      %span.mypage__favorite-artists-box__single-line
+    .mypage__favorite-articles-box
+      %h2.mypage__favorite-articles-box__title FAVORITE ARTICLES
+      %span.mypage__favorite-articles-box__single-line
+      .mypage__favorite-articles-box__articles
+        - if @articles.empty?
+          %p.mypage__favorite-articles-box__articles__message
+            = ""
+        - else
+          .mypage__favorite-articles-box__articles__wrapper
+            - @articles.each do |article|
+              = link_to article_path(article), class: "article" do
+                = render "shared/articles-list", article: article
+      %span.mypage__favorite-articles-box__single-line
+    .mypage__favorite-videos-box
+      %h2.mypage__favorite-videos-box__title FAVORITE VIDEOS
+      %span.mypage__favorite-videos-box__single-line
+      .mypage__favorite-videos-box__videos
+        - if @videos.empty?
+          %p.mypage__favorite-videos-box__videos__message
+            = "ないで"
+        - else
+          .mypage__favorite-videos-box__videos__wrapper
+            - @videos.each do |video|
+              = link_to video_path(video), class: "video" do
+                = render "shared/videos-list", video: video
+      %span.mypage__favorite-videos-box__single-line
