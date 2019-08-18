@@ -1,16 +1,12 @@
 .main
   .articles
-    %h1.articles__title LATEST ARTICLES
-    %span.articles__double-line
-    .articles__wrapper
-      - @articles.each do |article|
-        = link_to article_path(article), class: "article" do
-          = render "shared/articles-list", article: article
-
-
-
-
-
-
-
-
+    .articles__title-box
+      %h1.articles__title-box__title LATEST ARTICLES
+      %span.articles__title-box__double-line
+    .articles__articles-box
+      .articles__articles-box__wrapper
+        - @articles.each do |article|
+          = link_to article_path(article), class: "article",data: {id: article.id} do
+            = render "shared/articles-list", article: article
+    .articles__button-box
+      .articles__button-box__back-btn MORE ARTICLES
