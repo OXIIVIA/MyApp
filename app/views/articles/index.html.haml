@@ -3,16 +3,10 @@
     .articles__title-box
       %h1.articles__title-box__title LATEST ARTICLES
       %span.articles__title-box__double-line
-    .article__articles-box
+    .articles__articles-box
       .articles__articles-box__wrapper
         - @articles.each do |article|
-          = link_to article_path(article), class: "article" do
+          = link_to article_path(article), class: "article",data: {id: article.id} do
             = render "shared/articles-list", article: article
-
-
-
-
-
-
-
-
+    .articles__button-box
+      .articles__button-box__back-btn MORE ARTICLES

@@ -107,6 +107,12 @@
       }    
     }
   }
+  &__button-box {
+    &__back-btn {
+      @include button;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .article-show {
