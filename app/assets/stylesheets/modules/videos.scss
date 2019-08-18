@@ -1,16 +1,20 @@
-.video-index {
-  width: 100%;
-  background-color: $black;
-  .videos {
-    padding: 40px 100px;
-    background-color: #000;
+.videos {
+  width:90%;
+  margin: 0 auto;
+  padding: 40px 0;
+  &__title-box {
+    width: 100%;
+    margin-bottom: 30px;
     &__title {
       @include content-title($white);
     }
     &__double-line {
       @include double-line($white);
-      margin-bottom: 30px;
     }
+  }
+  &__videos-box {
+    width: 100%;
+    margin-bottom: 30px;
     &__wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -20,7 +24,21 @@
       }
     }
   }
+  &__button-box {
+    width: 100%;
+    &__more-btn {
+      @include button;
+      border: 1px solid $white;
+      background-color: $black;
+      color: $white;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
 }
+
 
 .video-show {
   display: block;
