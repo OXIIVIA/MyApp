@@ -10,6 +10,10 @@
       %span.article-show__text-box__single-line
       %p.article-show__text-box__text
         = safe_join(@article.text.split("\n"), tag(:br))
+      - if !@article.apple_musics.empty?
+        - @article.apple_musics.each do |apple_music|
+          .article-show__text-box__apple-music
+            %iframe(src="#{apple_music.link}" allow="autoplay *; encrypted-media *;" frameborder="0" height="300" style="width:100%;max-width:900px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation")
       %span.article-show__text-box__single-line
     - if user_signed_in?
       .article-show__button-box{id: "favorite-article-btn-#{@article.id}"}
