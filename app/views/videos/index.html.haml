@@ -7,7 +7,7 @@
       .videos__videos-box
         .videos__videos-box__wrapper
           - @videos.each do |video|
-            = link_to video_path(video), class: "video" do
+            = link_to video_path(video), class: "video", data: {id: video.id} do
               = render "shared/videos-list", video: video
       .videos__button-box
         .videos__button-box__more-btn MORE VIDEOS
