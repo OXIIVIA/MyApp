@@ -1,0 +1,3 @@
+class AppleMusic < ApplicationRecord
+  
+end
