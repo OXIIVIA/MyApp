@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
 
   function addArticle(article) {
-    debugger
     var html = `<a class="article" data-id="${article.id}" href="/articles/${article.id}">
                   <div class="article__inner">
                     <div class="article__inner__image">

@@ -1,9 +1,13 @@
 .main
-  .video-index
+  .main__black-box
     .videos
-      %h1.videos__title LATEST VIDEOS
-      %span.videos__double-line
-      .videos__wrapper
-        - @videos.each do |video|
-          = link_to video_path(video), class: "video" do
-            = render "shared/videos-list", video: video
+      .videos__title-box
+        %h1.videos__title-box__title LATEST VIDEOS
+        %span.videos__title-box__double-line
+      .videos__videos-box
+        .videos__videos-box__wrapper
+          - @videos.each do |video|
+            = link_to video_path(video), class: "video", data: {id: video.id} do
+              = render "shared/videos-list", video: video
+      .videos__button-box
+        .videos__button-box__more-btn MORE VIDEOS
