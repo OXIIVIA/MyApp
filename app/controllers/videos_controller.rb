@@ -2,7 +2,13 @@ class VideosController < ApplicationController
   before_action :set_artist, only: [:show]
 
   def index
-    @videos = Video.all
+    @videos = Video.order("id DESC").limit(8)
+    last_video_id = params[:id]
+    @next = Video.where("id < #{last_video_id}", params[:id]).limit(8)
+    respond_to do |format|
+      format.html
+      format.json 
+    end
   end
 
   def show

@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
     last_video_id = $('.video').last().attr('data-id');
     url = window.location.href;
     $.ajax({
-      url: "url",
+      url: url,
       type: 'GET',
       dataType: 'json',
       data: {id: last_video_id}
