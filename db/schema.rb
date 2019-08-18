@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190818133548) do
+ActiveRecord::Schema.define(version: 20190818141752) do
 
   create_table "apple_musics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",       null: false
-    t.string   "link",        null: false
-    t.integer  "artists_id",  null: false
-    t.integer  "articles_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["articles_id"], name: "index_apple_musics_on_articles_id", using: :btree
-    t.index ["artists_id"], name: "index_apple_musics_on_artists_id", using: :btree
+    t.string   "title",      null: false
+    t.string   "link",       null: false
+    t.integer  "artist_id",  null: false
+    t.integer  "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_apple_musics_on_article_id", using: :btree
+    t.index ["artist_id"], name: "index_apple_musics_on_artist_id", using: :btree
   end
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20190818133548) do
     t.index ["artist_id"], name: "index_videos_on_artist_id", using: :btree
   end
 
-  add_foreign_key "apple_musics", "articles", column: "articles_id"
-  add_foreign_key "apple_musics", "artists", column: "artists_id"
+  add_foreign_key "apple_musics", "articles"
+  add_foreign_key "apple_musics", "artists"
   add_foreign_key "articles", "artists"
   add_foreign_key "favorite_articles", "articles"
   add_foreign_key "favorite_articles", "users"
