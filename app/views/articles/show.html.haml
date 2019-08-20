@@ -10,6 +10,10 @@
       %span.article-show__text-box__single-line
       %p.article-show__text-box__text
         = safe_join(@article.text.split("\n"), tag(:br))
+      - if !@article.videos.empty?
+        - @article.videos.each do |video|
+          .article-show__text-box__video
+            %iframe(src="https://www.youtube.com/embed/#{video.videoID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
       - if !@article.apple_musics.empty?
         - @article.apple_musics.each do |apple_music|
           .article-show__text-box__apple-music
