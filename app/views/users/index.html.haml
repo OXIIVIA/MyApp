@@ -10,7 +10,7 @@
       .mypage__favorite-artists-box__artists
         - if @artists.empty?
           %p.mypage__favorite-artists-box__artists__message
-            = "ないで"
+            = "NO FOLLOWING ARTISTS"
         - else
           .mypage__favorite-artists-box__artists__wrapper
             - @artists.each do |artist|
@@ -23,7 +23,7 @@
       .mypage__favorite-articles-box__articles
         - if @articles.empty?
           %p.mypage__favorite-articles-box__articles__message
-            = ""
+            = "NO FAVORITE ARTICLES"
         - else
           .mypage__favorite-articles-box__articles__wrapper
             - @articles.each do |article|
@@ -36,7 +36,7 @@
       .mypage__favorite-videos-box__videos
         - if @videos.empty?
           %p.mypage__favorite-videos-box__videos__message
-            = "ないで"
+            = "NO FAVORITE VIDEOS"
         - else
           .mypage__favorite-videos-box__videos__wrapper
             - @videos.each do |video|

@@ -123,6 +123,9 @@
     }
     &__artists {
       margin: 30px 0;
+      &__message {
+        text-align: center
+      }
       &__wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -143,6 +146,9 @@
     }
     &__articles {
       margin: 30px 0;
+      &__message {
+        text-align: center
+      }
       &__wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -163,6 +169,9 @@
     }
     &__videos {
       margin: 30px 0;
+      &__message {
+        text-align: center
+      }
       &__wrapper {
         display: flex;
         flex-wrap: wrap;
