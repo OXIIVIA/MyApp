@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190819065113) do
+ActiveRecord::Schema.define(version: 20190820043716) do
 
   create_table "apple_musics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",      null: false
@@ -99,8 +99,10 @@ ActiveRecord::Schema.define(version: 20190819065113) do
     t.string   "title",      null: false
     t.string   "videoID",    null: false
     t.integer  "artist_id",  null: false
+    t.integer  "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_videos_on_article_id", using: :btree
     t.index ["artist_id"], name: "index_videos_on_artist_id", using: :btree
   end
 
