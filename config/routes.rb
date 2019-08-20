@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'articles#index'
   resources :users, only: [:edit, :update]
-  resources :artists, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :artists, only: [:index, :new, :show,]
   resources :videos, only: [:index, :show]
   resources :articles, only: [:index, :show]
 

@@ -64,29 +64,6 @@
     background-color: $black;
     color: $white;
   }
-  &__menu {
-    width: 100%;
-    height: 30px;
-    &__list {
-      display: flex;
-      &__link {
-        & a {
-          display: inline-block;
-          height: 30px;
-          line-height: 30px;
-          margin-right: 20px;
-          text-decoration: none;
-          font-size: 10px;
-          font-weight: bold;
-          color: $black;
-          letter-spacing: 2px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
   &__text {
     font-size: 16px;
     margin-bottom: 30px;
@@ -111,91 +88,5 @@
       background-color: black;
     }
   }
-}
-.form-box-update {
-  width: 100vw;
-  height: 100vh;
-  padding-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.artist-form {
-  width: 70%;
-  &__header {
-    & h2 {
-      line-height: 50px;
-      text-align: center;
-      font-size: 24px;
-    }
-  .double-line--black {
-    @include double-line($black);
-  }
-  }
-  &__box {
-    width: 100%;
-    padding: 30px 0;
-    & label {
-      display: block;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    & input {
-      height: 40px;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid $black;
-      margin-bottom: 30px;
-      text-align: center;
-      &:focus {
-        outline: 0;
-        border-bottom: 1px solid #7806c4;
-      }
-    }
-    & textarea {
-      height: 200px;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid $black;
-      &:focus {
-        outline: 0;
-        border-bottom: 1px solid #7806c4;
-      }
-    }
-    &__name {
-      width: 50%;
-      margin: 0 auto;
-    }
-    &__image {
-      width: 100%
-    }
-    &__text {
-      width: 100%
-    }
-  }
-  &__submit {
-    width: 100%;
-    height: 46px;
-    & input {
-    display: block;
-    height: 100%;
-    width: 33%;
-    border: 1px solid $black;
-    margin: 0 auto;
-    line-height: 42px;
-    font-size: 18px;
-    color: $black;
-    background-color: $white;
-    text-decoration:none;
-    text-align: center;
-      &:hover {
-        cursor: pointer;
-        color: $white;
-        background-color: black;
-      }
-    }
-  }
-
 }
 
