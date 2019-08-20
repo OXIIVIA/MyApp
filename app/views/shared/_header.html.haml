@@ -5,17 +5,14 @@
       #default-menu
         %ul.menu__list
           %li.menu__list__link
-            = link_to "ARTICLES", "/"
+            = link_to "ARTICLES", articles_path
           %li.menu__list__link
             = link_to "ARTISTS", artists_path
           %li.menu__list__link
-            = link_to "FAVORITES", "/"
-          %li.menu__list__link
             = link_to "VIDEOS", videos_path
-          %li.menu__list__link
-            = link_to "RANKING", "/"
-          %li.menu__list__btn
-            = fa_icon "search"
+          - if user_signed_in?
+            %li.menu__list__link
+              = link_to "MY PAGE", users_path(current_user)
           %li.menu__list__btn
             = fa_icon "user"
       #user-menu
@@ -27,8 +24,6 @@
             - if current_user != nil && current_user.admin_flg?
               %li.menu__list__link
                 = link_to "ADMIN", "/admin", target: :_blank
-            %li.menu__list__link
-              = link_to "MY PAGE", users_path(current_user)
             %li.menu__list__link
               = link_to "EDIT ACCOUNT", edit_user_path(current_user)
             %li.menu__list__link
