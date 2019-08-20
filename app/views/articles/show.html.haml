@@ -10,6 +10,18 @@
       %span.article-show__text-box__single-line
       %p.article-show__text-box__text
         = safe_join(@article.text.split("\n"), tag(:br))
+      - if !@article.videos.empty?
+        - @article.videos.each do |video|
+          .article-show__text-box__video
+            %iframe(src="https://www.youtube.com/embed/#{video.videoID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      - if !@article.apple_musics.empty?
+        - @article.apple_musics.each do |apple_music|
+          .article-show__text-box__apple-music
+            %iframe(src="#{apple_music.link}" allow="autoplay *; encrypted-media *;" frameborder="0" height="300" style="width:100%;max-width:900px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation")
+      - if !@article.soundclouds.empty?
+        - @article.soundclouds.each do |soundcloud|
+          .article-show__text-box__soundcloud
+            %iframe(width="100%" height="#{soundcloud.player_height}" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=#{soundcloud.link}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
       %span.article-show__text-box__single-line
     - if user_signed_in?
       .article-show__button-box{id: "favorite-article-btn-#{@article.id}"}

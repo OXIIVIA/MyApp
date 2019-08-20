@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190816042725) do
+ActiveRecord::Schema.define(version: 20190820043716) do
+
+  create_table "apple_musics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",      null: false
+    t.string   "link",       null: false
+    t.integer  "artist_id",  null: false
+    t.integer  "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_apple_musics_on_article_id", using: :btree
+    t.index ["artist_id"], name: "index_apple_musics_on_artist_id", using: :btree
+  end
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                    null: false
@@ -58,6 +69,18 @@ ActiveRecord::Schema.define(version: 20190816042725) do
     t.index ["user_id"], name: "index_follow_users_on_user_id", using: :btree
   end
 
+  create_table "soundclouds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",                       null: false
+    t.text     "link",          limit: 65535, null: false
+    t.integer  "player_height"
+    t.integer  "artist_id",                   null: false
+    t.integer  "article_id",                  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["article_id"], name: "index_soundclouds_on_article_id", using: :btree
+    t.index ["artist_id"], name: "index_soundclouds_on_artist_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -76,11 +99,15 @@ ActiveRecord::Schema.define(version: 20190816042725) do
     t.string   "title",      null: false
     t.string   "videoID",    null: false
     t.integer  "artist_id",  null: false
+    t.integer  "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_videos_on_article_id", using: :btree
     t.index ["artist_id"], name: "index_videos_on_artist_id", using: :btree
   end
 
+  add_foreign_key "apple_musics", "articles"
+  add_foreign_key "apple_musics", "artists"
   add_foreign_key "articles", "artists"
   add_foreign_key "favorite_articles", "articles"
   add_foreign_key "favorite_articles", "users"
@@ -88,5 +115,7 @@ ActiveRecord::Schema.define(version: 20190816042725) do
   add_foreign_key "favorite_videos", "videos"
   add_foreign_key "follow_users", "artists"
   add_foreign_key "follow_users", "users"
+  add_foreign_key "soundclouds", "articles"
+  add_foreign_key "soundclouds", "artists"
   add_foreign_key "videos", "artists"
 end
