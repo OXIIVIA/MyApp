@@ -29,63 +29,104 @@
   width: 70%;
   margin: 0 auto;
   background-color: $white;
-  &__name {
-    @include content-title($black);
-    height: 70px;
-    line-height: 70px;
-    font-size: 40px;
-  }
-  &__double-line {
-    @include double-line($black);
-    margin-bottom: 30px;
-  }
-  &__image {
+  &__title-box {
     width: 100%;
-    margin-bottom: 50px;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
+    margin-bottom: 60px;
+    &__name {
+      @include content-title($black);
+      height: 70px;
+      line-height: 70px;
+      font-size: 40px;
+    }
+    &__double-line {
+      @include double-line($black);
+    }
   }
-  &__follow-btn {
-    display: block;
-    height: 44px;
-    width: 33%;
-    border: 1px solid $black;
-    margin: 0 auto 30px;
-    line-height: 42px;
-    font-size: 18px;
-    color: $black;
-    background-color: $white;
-    text-decoration:none;
-    text-align: center;
-  }
-  &__following-btn {
-    @extend .artist-data__follow-btn;
-    background-color: $black;
-    color: $white;
-  }
-  &__text {
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
-  &__start-single-line {
-    @include single-line($black);
-    margin: 0 auto;
+  &__image-box {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    &__image {
+      width: 100%;
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+    }
   }
-  &__end-single-line {
-    @include single-line($black);
-    margin: 0 auto;
+  &__button-box {
     width: 100%;
-    margin-bottom: 30px;
-  }
-  &__back-btn {
-    @include button;
-    &:hover {
-      cursor: pointer;
+    margin-bottom: 60px;
+    &__follow-btn {
+      @include button;
+    }
+    &__following-btn {
+      @include button;
+      background-color: $black;
       color: $white;
-      background-color: black;
+    }
+    &__back-btn {
+      @include button;
+      &:hover {
+        cursor: pointer;
+        color: $white;
+        background-color: black;
+      }
+    }
+  }
+  &__text-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__text {
+      font-size: 16px;
+      padding: 30px 0;
+    }
+    &__single-line {
+      @include single-line($black);
+    }
+  }
+  &__articles-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+    }
+    &__single-line {
+      @include single-line($black);
+    }
+    &__message {
+      text-align: center;
+      padding: 30px 0;
+    }
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 0;
+      .article {
+        @include articles-list(31%);
+      } 
+    }
+  }
+  &__videos-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__title {
+      @include content-title($black);
+    }
+    &__single-line {
+      @include single-line($black);
+    }
+    &__message {
+      text-align: center;
+      padding: 30px 0;
+    }
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 0;
+      .video {
+        @include videos-list(31%);
+        color: $black;
+        border-bottom: 1px solid $black;
+      }
     }
   }
 }

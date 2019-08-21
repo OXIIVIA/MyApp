@@ -1,14 +1,43 @@
 .main
   .artist-data
-    %h1.artist-data__name
-      = @artist.name
-    %span.artist-data__double-line
-    = image_tag @artist.image, class: "artist-data__image"
+    .artist-data__title-box 
+      %h1.artist-data__title-box__name
+        = @artist.name
+      %span.artist-data__title-box__double-line
+    .artist-data__image-box
+      = image_tag @artist.image, class: "artist-data__image-box__image"
     - if user_signed_in?
-      .follow-btn-box{id: "follow-btn-box-#{@artist.id}"}
+      .artist-data__button-box{id: "follow-id-#{@artist.id}"}
         = render "shared/follow-button", artist: @artist
-    %span.artist-data__start-single-line
-    %p.artist-data__text
-      = safe_join(@artist.text.split("\n"), tag(:br))
-    %span.artist-data__end-single-line
-    = link_to "BACK", artists_path, class: "artist-data__back-btn"
+    .artist-data__text-box
+      %span.artist-data__text-box__single-line
+      %p.artist-data__text-box__text
+        = safe_join(@artist.text.split("\n"), tag(:br))
+      %span.artist-data__text-box__single-line
+    .artist-data__articles-box
+      %h2.artist-data__articles-box__title ARTICLES
+      %span.artist-data__articles-box__single-line
+      - if @artist.articles.empty?
+        %p.artist-data__articles-box__message
+          = "No articles"
+      - else
+        .artist-data__articles-box__wrapper
+          - @artist.articles.each do |article|
+            = link_to article_path(article), class: "article" do
+              = render "shared/articles-list", article: article
+      %span.artist-data__articles-box__single-line
+    .artist-data__videos-box
+      %h2.artist-data__videos-box__title VIDEOS
+      %span.artist-data__videos-box__single-line
+      - if @artist.videos.empty?
+        %p.artist-data__videos-box__message
+          = "No videos"
+      - else
+        .artist-data__videos-box__wrapper
+          - @artist.videos.each do |video|
+            = link_to video_path(video), class: "video" do
+              = render "shared/videos-list", video: video
+      %span.artist-data__videos-box__single-line
+    .artist-data__button-box
+      = link_to "BACK", artists_path, class: "artist-data__button-box__back-btn"
+    
