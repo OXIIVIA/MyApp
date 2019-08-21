@@ -27,7 +27,8 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(articles) {
       var reversedArticles = articles.reverse();
-      $.each(reversedArticles, function(i, article) {
+      var slicedArticles = reversedArticles.slice(0, 8);
+      $.each(slicedArticles, function(i, article) {
         addArticle(article);
       });
     })

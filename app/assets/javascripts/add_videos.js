@@ -28,7 +28,8 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(videos) {
       var reversedVideos = videos.reverse();
-      $.each(reversedVideos, function(i, video) {
+      var slicedvideos = reversedVideos.slice(0, 8);
+      $.each(slicedvideos, function(i, video) {
         addVideo(video);
       });
     })
