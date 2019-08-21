@@ -203,23 +203,28 @@
   &__button-box {
     &__back-btn {
       @include button;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
     &__remove-favorite-btn {
       @include button;
         border: 1px solid $purple;
         background-color: $purple;
+        margin-bottom: 60px;
         color: $white;
         &:hover {
+          cursor: pointer;
           background-color: $purple;
         }
     }
     &__add-favorite-btn {
       @include button;
       border: 1px solid $purple;
+      margin-bottom: 60px;
+      color: $purple;
       &:hover {
+        cursor: pointer;
         background-color: $white;
-        color: black;
+        color: $purple;
       }
     }
   }
