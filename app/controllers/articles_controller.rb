@@ -3,9 +3,9 @@ class ArticlesController < ApplicationController
   before_action :set_artist, only: [:show]
 
   def index
-    @articles = Article.order("id DESC").limit(16)
+    @articles = Article.order("id DESC").limit(8)
     last_article_id = params[:id]
-    @next = Article.where("id < #{last_article_id}", params[:id]).limit(16)
+    @next = Article.where("id < #{last_article_id}", params[:id])
     respond_to do |format|
       format.html
       format.json 
