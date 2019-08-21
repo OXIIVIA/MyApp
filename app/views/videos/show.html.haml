@@ -1,33 +1,36 @@
 .main
-  .video-show
-    .video-show__info
-      %h1.video-show__info__title
-        = "#{@video.artist.name} - #{@video.title}"
-      %span.video-show__info__double-line
-      .video-show__info__player
-        %iframe(src="https://www.youtube.com/embed/#{@video.videoID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+  .main__black-box
+    .video-show
+      .video-show__title-box
+        %h1.video-show__title-box__title
+          = "#{@video.artist.name} - #{@video.title}"
+        %span.video-show__title-box__double-line
+      .video-show__player-box
+        .video-show__player-box__iframe
+          %iframe(src="https://www.youtube.com/embed/#{@video.videoID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
       - if user_signed_in?
-        .video-show__info__button-box{id: "favorite-video-btn-#{@video.id}"}
+        .video-show__button-box{id: "favorite-video-btn-#{@video.id}"}
           = render "shared/favorite-video-button", video: @video
-      .video-show__info__artist-info
-        %h2.video-show__info__artist-info__title Starring Artist
-        %span.video-show__info__artist-info__single-line
-        = image_tag @video.artist.image, class: "video-show__info__artist-info__image"
-        .video-show__info__artist-info__name-box
-          %span.video-show__info__artist-info__name-box__single-line
-          = link_to "#{@video.artist.name}", artist_path(@video.artist), class: "video-show__info__artist-info__name-box__name"
-          %span.video-show__info__artist-info__name-box__single-line
+      .video-show__artist-box
+        %h2.video-show__artist-box__title Starring Artist
+        %span.video-show__artist-box__single-line
+        = image_tag @video.artist.image, class: "video-show__artist-box__image"
+        .video-show__artist-box__name-box
+          %span.video-show__artist-box__name-box__single-line
+          = link_to "#{@video.artist.name}", artist_path(@video.artist), class: "video-show__artist-box__name-box__name"
+          %span.video-show__artist-box__name-box__single-line
       - if !@videos.empty?
-        %h2.video-show__info__other-videos-message
-          = "Other videos of #{@video.artist.name}"
-        %span.video-show__info__other-videos-single-line
-        .video-show__info__other-videos-wrapper
-          - @videos.each do |video|
-            = link_to video_path(video), class: "other-video" do
-              = render "shared/videos-list", video: video
-        %span.video-show__info__other-videos-single-line
-      .video-show__info__button-box
-        = link_to "BACK", videos_path, class: "video-show__info__button-box__back-btn"
+        .video-show__other-videos-box
+          %h2.video-show__other-videos-box__message
+            = "Other videos of #{@video.artist.name}"
+          %span.video-show__other-videos-box__single-line
+          .video-show__other-videos-box__wrapper
+            - @videos.each do |video|
+              = link_to video_path(video), class: "other-video" do
+                = render "shared/videos-list", video: video
+          %span.video-show__other-videos-box__single-line
+      .video-show__button-box
+        = link_to "BACK", videos_path, class: "video-show__button-box__back-btn"
 
 
 

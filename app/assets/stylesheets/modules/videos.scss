@@ -42,11 +42,13 @@
 
 .video-show {
   display: block;
-  padding-bottom: 30px; 
+  width: 70%;
+  padding: 30px 0;
+  margin: 0 auto;
   background-color: #000;
-  &__info {
-    width: 70%;
-    margin: 0 auto;
+  &__title-box {
+    width: 100%;
+    margin-bottom: 30px;
     &__title {
       @include content-title($white);
       height: 40px;
@@ -55,14 +57,16 @@
     }
     &__double-line {
       @include double-line($white);
-      margin-bottom: 30px;
     }
-    &__player {
+  }
+  &__player-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__iframe{
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      margin-bottom: 80px;
       & iframe {
         position: absolute;
         top: 0;
@@ -71,91 +75,95 @@
         height: 100%;
       }
     }
-    &__artist-info {
-      width: 50%;
-      margin: 80px auto;
-      &__title {
-        @include content-title($white);
-        height: 40px;
-        line-height: 40px;
-        font-size: 18px;
-      }
-      &__single-line {
-        @include single-line($white);
-        margin-bottom: 30px;
-      }
-      &__image {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-      &__name-box {
-        width: 50%;
-        margin: 0 auto;
-        &__single-line {
-          @include single-line($white);
-        }
-        &__name {
-          height: 36px;
-          line-height: 36px;
-          text-align: center;
-          display: block;
-          color: $white;
-          text-decoration: none;
-          font-size: 18px;
-          font-weight: bold;
-        }
+  }
+  &__button-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__back-btn {
+      @include button;
+      border: 1px solid $white;
+      background-color: $black;
+      color: $white;
+      &:hover {
+        cursor: pointer;
+        color: $black;
+        background-color: $white;
       }
     }
-    &__other-videos-message {
+    &__add-favorite-btn {
+      @include button;
+      border: 1px solid $yellow;
+      background-color: $black;
+      color: $yellow;
+      &:hover {
+        cursor: pointer;
+        color: $yellow;
+        background-color: $black;
+      }
+    }
+    &__remove-favorite-btn {
+      @include button;
+      border: 1px solid $yellow;
+      background-color: $yellow;
+      color: $white;
+      &:hover {
+        cursor: pointer;
+        color: $white;
+        background-color: $yellow;
+      }
+    }
+  }
+  &__artist-box {
+    width: 50%;
+    margin: 0 auto 60px;
+    &__title {
       @include content-title($white);
-      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
     }
-    &__other-videos-single-line {
+    &__single-line {
       @include single-line($white);
       margin-bottom: 30px;
     }
-    &__other-videos-wrapper {
-      display: flex;
-      flex-wrap: wrap;
+    &__image {
+      width: 100%;
       margin-bottom: 30px;
-      .other-video {
-        @include videos-list(31%);
+    }
+    &__name-box {
+      width: 50%;
+      margin: 0 auto;
+      &__single-line {
+        @include single-line($white);
+      }
+      &__name {
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        display: block;
+        color: $white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
-    &__button-box {
-      height: 44px;
-      &__back-btn {
-        @include button;
-        border: 1px solid $white;
-        background-color: $black;
-        color: $white;
-        &:hover {
-          cursor: pointer;
-          color: $black;
-          background-color: $white;
-        }
-      }
-      &__add-favorite-btn {
-        @include button;
-        border: 1px solid $yellow;
-        background-color: $black;
-        color: $white;
-        &:hover {
-          cursor: pointer;
-          color: $white;
-          background-color: $black;
-        }
-      }
-      &__remove-favorite-btn {
-        @include button;
-        border: 1px solid $yellow;
-        background-color: $yellow;
-        color: $white;
-        &:hover {
-          cursor: pointer;
-          color: $white;
-          background-color: $yellow;
-        }
+  }
+  &__other-videos-box {
+    width: 100%;
+    margin-bottom: 60px;
+    &__message {
+      @include content-title($white);
+      font-size: 16px;
+    }
+    &__single-line {
+      @include single-line($white);
+    }
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 0;
+      .other-video {
+        @include videos-list(31%);
       }
     }
   }

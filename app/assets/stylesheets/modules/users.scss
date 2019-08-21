@@ -58,17 +58,18 @@
     display: block;
     height: 100%;
     width: 33%;
-    border: 2px solid #0a0794;
+    border: 2px solid $dark-blue;
     margin: 0 auto;
     line-height: 42px;
     font-size: 18px;
-    color:white;
+    color: $dark-blue;
     background-color: $black;
     text-decoration:none;
     text-align: center;
     &:hover {
       cursor: pointer;
-      background-color:#0a0794;
+      background-color:$dark-blue;
+      color: $white;
     }
   }
 }
@@ -82,9 +83,11 @@
   @extend .field-login;
   &__btn{
     @extend .field-login__btn;
-    border: 2px solid #026b3c;
+    border: 2px solid $dark-green;
+    color: $dark-green;
     &:hover {
-      background-color:#026b3c;
+      background-color: $dark-green;
+      color: $white;
     }
   }
 }
@@ -93,9 +96,11 @@
   @extend .field-login;
   &__btn{
     @extend .field-login__btn;
-    border: 2px solid #ff692e;
+    border: 2px solid $orange;
+    color: $orange;
     &:hover {
-      background-color:#ff692e;
+      background-color:$orange;
+      color: $white;
     }
   }
 }
