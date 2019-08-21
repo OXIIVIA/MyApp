@@ -1,4 +1,4 @@
 - if current_user.follow_users.find_by(artist_id: artist.id)
-  = link_to "FOLLOWING", follow_path(artist.id), method: :delete, class: "artist-data__following-btn", remote: true
+  = link_to "FOLLOWING", follow_path(artist.id), method: :delete, class: "artist-data__button-box__following-btn", remote: true
 - else
-  = link_to "FOLLOW", follow_path(artist.id), method: :post, class: "artist-data__follow-btn", remote: true
+  = link_to "FOLLOW", follow_path(artist.id), method: :post, class: "artist-data__button-box__follow-btn", remote: true
