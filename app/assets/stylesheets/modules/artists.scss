@@ -31,7 +31,7 @@
   background-color: $white;
   &__title-box {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     &__name {
       @include content-title($black);
       height: 70px;
@@ -44,7 +44,7 @@
   }
   &__image-box {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     &__image {
       width: 100%;
       background-size:cover;
