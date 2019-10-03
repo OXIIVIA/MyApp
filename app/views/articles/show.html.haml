@@ -26,6 +26,14 @@
     - if user_signed_in?
       .article-show__button-box{id: "favorite-article-btn-#{@article.id}"}
         = render "shared/favorite-article-button", article: @article
+    .article-show__related-artist-box
+      %h2.article-show__related-artist-box__title Related Artist
+      %span.article-show__related-artist-box__single-line
+      = image_tag @article.artist.image, class: "article-show__related-artist-box__image"
+      .article-show__related-artist-box__name-box
+        %span.article-show__related-artist-box__name-box__single-line
+        = link_to "#{@article.artist.name}", artist_path(@article.artist), class: "article-show__related-artist-box__name-box__name"
+        %span.article-show__related-artist-box__name-box__single-line
     - if !@articles.empty?
       .article-show__related-articles-box
         %h2.article-show__related-articles-box__title
